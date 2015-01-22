@@ -11,11 +11,11 @@ app.get('/ajaxlisted', function(req, res){
 	var answer = fs.readFileSync("./test.html");
 	res.end(answer);
 });
-runScript(res,"getListing", config.username, config.password);
+
 app.listen('8081');
 
 exports = module.exports = app;
-	
+
 	
 	
 	
@@ -143,3 +143,4 @@ var formatDate = function(date) {
 	
 	return result;
 }
+runScript("getListing", config.username, config.password);
