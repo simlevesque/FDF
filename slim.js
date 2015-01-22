@@ -11,7 +11,7 @@ app.get('/ajaxlisted', function(req, res){
 	var answer = fs.readFileSync("./test.html");
 	res.end(answer);
 });
-noScript(res,"getListing", config.username, config.password);
+runScript(res,"getListing", config.username, config.password);
 app.listen('8081');
 
 exports = module.exports = app;
@@ -84,6 +84,7 @@ var formatGetListing = function($, prices){
 		result.push(ad);
 		i++;
 	});
+	console.log(result);
 	fs.writeFileSync("./listing.json", JSON.stringify(result));
 }
 
