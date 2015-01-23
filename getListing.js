@@ -1,7 +1,7 @@
 //Get Ads Listing
 var casper = require('casper').create(),
-	username = casper.cli.options["un"].replace(/"/g, ''),
-	password = casper.cli.options["pw"].replace(/"/g, ''),
+	username = casper.cli.args[0],
+	password = casper.cli.args[1],
 	urlA = "https://www.kiji",
 	urlB = "ji.ca/m-m",
 	urlC = "y-ads.html",
@@ -14,9 +14,21 @@ var casper = require('casper').create(),
 	nameSelector = nameSelectorA + nameSelectorB,
 	content,
 	prices,
-	aynRand = function(){return Math.floor(Math.random()*2000)};
-	
-casper.options.waitTimeout = 20000;
+	dom,
+	aynRand = function(){return Math.floor(Math.random()*750)},
+	fs = require('fs');
+
+
+//fix arguments
+if(username.charAt(1) === "u"){
+	username = username.slice(3);
+	password = password.slice(3);
+} else if (username.charAt(1) === "p"){
+	username = password.slice(3);
+	password = username.slice(3);
+}
+
+casper.options.waitTimeout = 10000;
 
 //Log in
 casper.start(url, function() {
@@ -31,30 +43,23 @@ casper.start(url, function() {
 //Once you are logged in
 casper.waitForSelector(baseSelector, function() {
 	this.wait(aynRand());
+
 	prices = this.evaluate(function() {
 		var array = [];
 		for(var i = 0; i<$(".price-change-input").length; i++){
 			array.push($(".price-change-input")[i].value.split(".")[0]);
 		}
-		
 		return array.join(",");
 	});
-	this.wait(aynRand());
-	this.click('.icon-edit');
-    content = [this.getHTML('.my-ads-active', true), prices];
-	this.wait(aynRand());
-});
 
-casper.then(function(){
-	this.echo("HTML : " + content[0]);
-});
+	this.wait(aynRand());
 
-casper.then(function(){
-	this.echo("PRICES : " + content[1]);
+	var html = this.getHTML('.my-ads-active', true);
+	fs.write("./cache/listing/dom.html", html, "w");
+	fs.write("./cache/listing/prices.json", JSON.stringify(prices), "w");
 });
 
 //print the html
 casper.run(function() {
 	this.exit();
 });
-
