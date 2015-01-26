@@ -1,0 +1,311 @@
+<table class="list-items my-ads-active" infinite-scroll="fetchItems()" infinite-scroll-distance="2" infinite-scroll-disabled="loading || reachedEndOfItems">
+                    <tbody><!-- ngIf: currentSuperState == 'EXPIRED' && items.length -->
+
+                    </tbody><!-- ngIf: items.length --><thead style="width: 960px; height: 35px; display: none;"><tr style="width: 960px; height: 35px;"><th style="width: 33px; height: 24px;"></th><th colspan="2" style="width: 342px; height: 24px;"></th><th style="width: 145px; height: 24px;"></th><th style="width: 101px; height: 24px;"></th><th style="width: 62px; height: 24px;"></th><th style="width: 117px; height: 24px;"></th><th style="width: 90px; height: 24px;"></th></tr><tr style="width: 960px; height: 0px;"><td colspan="8" style="width: 960px; height: 0px;"></td></tr></thead><thead data-ng-if="items.length" class="container-header-controls ng-scope ng-isolate-scope" data-sticked="{fromTop: 32}" data-sticked-trigger="itemsLoaded">
+                        <tr class="controls">
+                            <th style="width: 33px;" class="actions-column"></th>
+                            <th style="width: 342px;" colspan="2">
+                                <!-- ngIf: currentSuperState != 'EXPIRED' --><button disabled="disabled" data-ng-if="currentSuperState != 'EXPIRED'" id="CtaDelete" data-ng-click="deleteSelectedItems()" class="cta-delete-all button-task ng-scope disabled" data-ng-class="{true:'disabled', false:''}[selectedItems.length <= 0]" data-ng-disabled="selectedItems.length <= 0">
+                                    Delete&nbsp;<!-- ngIf: selectedItems.length > 0 -->
+                                </button><!-- end ngIf: currentSuperState != 'EXPIRED' -->
+
+                                <!-- ngIf: currentSuperState == 'EXPIRED' || currentSuperState == 'ACTIVE' --><button disabled="disabled" data-ng-if="currentSuperState == 'EXPIRED' || currentSuperState == 'ACTIVE'" id="CtaRepost" data-ng-click="repostSelectedItems()" class="cta-repost-all button-task ng-scope disabled" data-ng-class="{true:'disabled', false:''}[selectedRepostItems.length <= 0]" data-ng-disabled="selectedRepostItems.length <= 0">
+                                    Repost&nbsp;<!-- ngIf: selectedRepostItems.length > 0 -->
+                                </button><!-- end ngIf: currentSuperState == 'EXPIRED' || currentSuperState == 'ACTIVE' -->
+                            </th>
+
+                            <th style="width: 145px;">
+                                        Price</th>
+                                <th style="width: 101px;">
+                                        Posted</th>
+                                <th style="width: 62px;">
+                                        Visits</th>
+                                <th style="width: 117px;">
+                                        On Page<span data-hasqtip="0" class="tooltip-trigger" data-position-my="top center" data-position-at="bottom center" data-content="PageToolTip">[?]</span>
+                                            <span class="tooltip-content" id="PageToolTip">On Page shows you on which page your ad is displayed in its category. The greater the page number, the less likely it is to be viewed. <br>Please note that the number you see here could be up to an hour old.</span>
+                                        </th>
+                                <th style="width: 90px;">
+                                        Options</th>
+                                </tr>
+                        <tr class="header-message">
+                            <td style="width: 960px;" class="ng-isolate-scope" data-message-bucket="" for="header" colspan="8"><!-- ngRepeat: message in messages --></td>
+                        </tr>
+                    </thead><!-- end ngIf: items.length -->
+
+                    <tbody><tr data-ng-show="!items.length &amp;&amp; !loading" class="ResultAdRow ng-hide">
+                        <td colspan="8">
+                            You currently have no ads available in this section.<br><br>
+                            <a target="_self" href="/p-select-category.html" class="green-button post-ad-begin" data-btn-loc="my-ads"><span>Post an Ad</span></a>
+                        </td>
+                    </tr>
+
+                    </tbody><!-- ngRepeat: item in items --><tbody class="ng-scope" data-ng-repeat="item in items">
+                        <!-- ngIf: !item.hiddenItem --><tr data-ng-class="{'item-note': itemHasNote(item)}" data-ad-id="1046294328" id="msg-1046294328" class="item-enabled ResultAdRow ng-scope" data-my-kijiji-items="" data-ng-if="!item.hiddenItem"><td class="actions-column">
+    <input data-ng-model="item.isChecked" class="check-ad ng-pristine ng-valid" value="1046294328" data-ng-change="selectItem(item)" type="checkbox">
+</td>
+
+<td class="thumbnail-column">
+    <div class="thumbnail-container">
+        <!--<%--Icon to trigger item price adjustment--%>-->
+        <span class="field-message price-change" data-for="price-1046294328">
+        </span>
+
+        <message-bucket class="ng-isolate-scope" for="item-1046294328"><!-- ngRepeat: message in messages --></message-bucket>
+
+        <a id="ThumbnailLink0" class="thumbnail-image" target="_self" href="/v-view-details.html?adId=1046294328">
+            <!--<%-- Regular ad image --%>-->
+            <!-- ngIf: item.teaserUrl.length -->
+
+            <!--<%-- Placeholder ad image --%>-->
+            <!-- ngElse:  --><img class="ng-scope" data-ng-else="" id="PlaceholderImage0" src="https://ca.classistatic.com/static/V/2015.04.77/img/placeholder.gif">
+
+            <!--<%-- Repostable ad --%>-->
+            <!-- ngIf: item.expiring -->
+
+            <!--<%-- Expired ad --%>-->
+            <!-- ngIf: item.expired -->
+        </a>
+    </div>
+</td>
+
+<td class="description-column">
+    <div class="title">
+        <a id="TitleLink0" class="title-text ng-binding" target="_self" href="/v-view-details.html?adId=1046294328">
+            un CDRW vierge
+        </a>
+    </div>
+
+    <dl>
+        <dt class="ng-binding">
+            Category:
+        </dt>
+        <dd id="CategoryLink0">
+                                <!-- ngRepeat: category in item.leveledCategories --><span class="ng-scope" data-ng-repeat="category in item.leveledCategories">
+                                    <a class="ng-binding" target="_self" href="/b-buy-sell/ville-de-montreal/c10l1700281">buy and sell</a>
+                                    <!-- ngIf: !$last --><span class="ng-scope" data-ng-if="!$last">&nbsp;&gt;&nbsp;</span><!-- end ngIf: !$last -->
+                                </span><!-- end ngRepeat: category in item.leveledCategories --><span class="ng-scope" data-ng-repeat="category in item.leveledCategories">
+                                    <a class="ng-binding" target="_self" href="/b-cd-dvd-blu-ray/ville-de-montreal/c104l1700281">cds, dvds, blu-ray</a>
+                                    <!-- ngIf: !$last -->
+                                </span><!-- end ngRepeat: category in item.leveledCategories -->
+        </dd>
+
+        <dt class="ng-binding">
+            Location:
+        </dt>
+        <dd id="LocationValue0" data-ng-switch="item.locationNames.length">
+            <!-- ngSwitchWhen: 0 -->
+            <!-- ngSwitchDefault:  --><span class="ng-binding ng-scope" data-ng-switch-default="">Greater Montréal &gt; City of Montréal</span>
+        </dd>
+    </dl>
+</td>
+
+<td class="price-column" id="price-column-0">
+    <!--<%-- Editable Price --%>-->
+    <edit-price class="ng-isolate-scope" item="item"><!-- ngIf: item.canEditPrice --><span class="ng-scope" data-ng-if="item.canEditPrice">
+    $<input disabled="disabled" size="8" id="price-1046294328" name="price-1046294328" data-ng-disabled="!editing" data-ng-class="{'price-disabled': !editing}" data-ng-model="price" class="price-change-input ng-pristine ng-valid price-disabled" data-min="0.01" data-type="number" type="text">
+
+    <a href="" data-ng-click="toggleEdit()" class="icon-edit" data-ng-class="{'icon-save': editing}"></a>
+</span><!-- end ngIf: item.canEditPrice -->
+
+<!-- ngElseIf: price > 0 -->
+
+<!-- ngElse:  --></edit-price>
+</td>
+
+<td class="posted-column" id="date-column-0">
+    <!-- ngIf: !item.delayed --><span class="ng-binding ng-scope" data-ng-if="!item.delayed">20-Jan-15</span><!-- end ngIf: !item.delayed -->
+    <!-- ngIf: item.delayed -->
+</td>
+
+<td class="ad-views-column ng-binding" data-ng-bind="item.viewCounter">1</td>
+
+<td class="ad-page-column ng-binding" data-ng-bind="item.pageNumber">11</td>
+
+<!--
+hidden due to KCA-11625
+<td data-ng-if="item.showExpirationDate">-->
+    <!--{{item.expirationDate | date:'dd-MMM-yy'}}-->
+<!--</td>-->
+
+<!--
+hidden due to KCA-11660
+    <td data-ng-if="item.delayed"-->
+    <!--id="date-column-{{$index}}"-->
+    <!--colspan="3">-->
+    <!--<p class="delayed">-->
+        <!--{{adminCopy.delayed}}-->
+    <!--</p>-->
+<!--</td>-->
+
+<td class="options-column">
+    <!-- ngIf: item.active --><a data-ng-if="item.active" class="button-task ng-binding ng-scope" target="_self" href="/m-my-featured-ads.html?promotingId=1046294328">
+        <span class="icon-arrow-up"></span>
+        Promote
+    </a><!-- end ngIf: item.active -->
+    <!-- ngIf: item.canConfirm -->
+    <!-- ngIf: showRepostButton(item) -->
+    <!-- ngIf: item.canEdit && currentSuperState == 'ON_HOLD' -->
+    <div class="cta-other">
+        <!-- ngIf: item.canEdit && currentSuperState != 'ON_HOLD' --><a data-ng-if="item.canEdit &amp;&amp; currentSuperState != 'ON_HOLD'" target="_self" href="http://www.kijiji.ca/p-edit-ad.html?adId=1046294328" class="edit-ad-begin ng-binding ng-scope" data-btn-loc="my-ads">
+            Edit
+        </a><!-- end ngIf: item.canEdit && currentSuperState != 'ON_HOLD' -->
+
+        <!-- ngIf: item.canDelete --><a data-ng-if="item.canDelete" class="cta-delete ng-binding ng-scope" id="delete-ad-1046294328" data-ad-id="1046294328" data-ng-click="deleteItem(item)" href="">
+            Delete
+        </a><!-- end ngIf: item.canDelete -->
+    </div>
+</td></tr><!-- end ngIf: !item.hiddenItem -->
+
+                        <!-- ngIf: showRepostMessage(item) -->
+
+                        <!-- ngIf: showDelayedMessage(item) -->
+                    </tbody><!-- end ngRepeat: item in items --><tbody class="ng-scope" data-ng-repeat="item in items">
+                        <!-- ngIf: !item.hiddenItem --><tr data-ng-class="{'item-note': itemHasNote(item)}" data-ad-id="1046288220" id="msg-1046288220" class="item-enabled ResultAdRow ng-scope" data-my-kijiji-items="" data-ng-if="!item.hiddenItem"><td class="actions-column">
+    <input data-ng-model="item.isChecked" class="check-ad ng-pristine ng-valid" value="1046288220" data-ng-change="selectItem(item)" type="checkbox">
+</td>
+
+<td class="thumbnail-column">
+    <div class="thumbnail-container">
+        <!--<%--Icon to trigger item price adjustment--%>-->
+        <span class="field-message price-change" data-for="price-1046288220">
+        </span>
+
+        <message-bucket class="ng-isolate-scope" for="item-1046288220"><!-- ngRepeat: message in messages --></message-bucket>
+
+        <a id="ThumbnailLink1" class="thumbnail-image" target="_self" href="/v-view-details.html?adId=1046288220">
+            <!--<%-- Regular ad image --%>-->
+            <!-- ngIf: item.teaserUrl.length --><img src="//secureimg.ebayimg.com/00/s/MjIzWDMwMA==/z/52AAAOSwk5FUvsWW/$_2.JPG" class="ng-scope" data-ng-if="item.teaserUrl.length" id="ThumbnailImage1" data-ng-src="//secureimg.ebayimg.com/00/s/MjIzWDMwMA==/z/52AAAOSwk5FUvsWW/$_2.JPG" alt="Portable Sager NP8150 Gaming Laptop 15.6&quot; 1080p i7 Nvidia"><!-- end ngIf: item.teaserUrl.length -->
+
+            <!--<%-- Placeholder ad image --%>-->
+            <!-- ngElse:  -->
+
+            <!--<%-- Repostable ad --%>-->
+            <!-- ngIf: item.expiring -->
+
+            <!--<%-- Expired ad --%>-->
+            <!-- ngIf: item.expired -->
+        </a>
+    </div>
+</td>
+
+<td class="description-column">
+    <div class="title">
+        <a id="TitleLink1" class="title-text ng-binding" target="_self" href="/v-view-details.html?adId=1046288220">
+            Portable Sager NP8150 Gaming Laptop 15.6" 1080p i7 Nvidia
+        </a>
+    </div>
+
+    <dl>
+        <dt class="ng-binding">
+            Category:
+        </dt>
+        <dd id="CategoryLink1">
+                                <!-- ngRepeat: category in item.leveledCategories --><span class="ng-scope" data-ng-repeat="category in item.leveledCategories">
+                                    <a class="ng-binding" target="_self" href="/b-buy-sell/ville-de-montreal/c10l1700281">buy and sell</a>
+                                    <!-- ngIf: !$last --><span class="ng-scope" data-ng-if="!$last">&nbsp;&gt;&nbsp;</span><!-- end ngIf: !$last -->
+                                </span><!-- end ngRepeat: category in item.leveledCategories --><span class="ng-scope" data-ng-repeat="category in item.leveledCategories">
+                                    <a class="ng-binding" target="_self" href="/b-computer/ville-de-montreal/c16l1700281">computers</a>
+                                    <!-- ngIf: !$last --><span class="ng-scope" data-ng-if="!$last">&nbsp;&gt;&nbsp;</span><!-- end ngIf: !$last -->
+                                </span><!-- end ngRepeat: category in item.leveledCategories --><span class="ng-scope" data-ng-repeat="category in item.leveledCategories">
+                                    <a class="ng-binding" target="_self" href="/b-laptops/ville-de-montreal/c773l1700281">laptops</a>
+                                    <!-- ngIf: !$last -->
+                                </span><!-- end ngRepeat: category in item.leveledCategories -->
+        </dd>
+
+        <dt class="ng-binding">
+            Location:
+        </dt>
+        <dd id="LocationValue1" data-ng-switch="item.locationNames.length">
+            <!-- ngSwitchWhen: 0 -->
+            <!-- ngSwitchDefault:  --><span class="ng-binding ng-scope" data-ng-switch-default="">Greater Montréal &gt; City of Montréal</span>
+        </dd>
+    </dl>
+</td>
+
+<td class="price-column" id="price-column-1">
+    <!--<%-- Editable Price --%>-->
+    <edit-price class="ng-isolate-scope" item="item"><!-- ngIf: item.canEditPrice --><span class="ng-scope" data-ng-if="item.canEditPrice">
+    $<input disabled="disabled" size="8" id="price-1046288220" name="price-1046288220" data-ng-disabled="!editing" data-ng-class="{'price-disabled': !editing}" data-ng-model="price" class="price-change-input ng-pristine ng-valid price-disabled" data-min="0.01" data-type="number" type="text">
+
+    <a href="" data-ng-click="toggleEdit()" class="icon-edit" data-ng-class="{'icon-save': editing}"></a>
+</span><!-- end ngIf: item.canEditPrice -->
+
+<!-- ngElseIf: price > 0 -->
+
+<!-- ngElse:  --></edit-price>
+</td>
+
+<td class="posted-column" id="date-column-1">
+    <!-- ngIf: !item.delayed --><span class="ng-binding ng-scope" data-ng-if="!item.delayed">20-Jan-15</span><!-- end ngIf: !item.delayed -->
+    <!-- ngIf: item.delayed -->
+</td>
+
+<td class="ad-views-column ng-binding" data-ng-bind="item.viewCounter">30</td>
+
+<td class="ad-page-column ng-binding" data-ng-bind="item.pageNumber">&gt; 30</td>
+
+<!--
+hidden due to KCA-11625
+<td data-ng-if="item.showExpirationDate">-->
+    <!--{{item.expirationDate | date:'dd-MMM-yy'}}-->
+<!--</td>-->
+
+<!--
+hidden due to KCA-11660
+    <td data-ng-if="item.delayed"-->
+    <!--id="date-column-{{$index}}"-->
+    <!--colspan="3">-->
+    <!--<p class="delayed">-->
+        <!--{{adminCopy.delayed}}-->
+    <!--</p>-->
+<!--</td>-->
+
+<td class="options-column">
+    <!-- ngIf: item.active --><a data-ng-if="item.active" class="button-task ng-binding ng-scope" target="_self" href="/m-my-featured-ads.html?promotingId=1046288220">
+        <span class="icon-arrow-up"></span>
+        Promote
+    </a><!-- end ngIf: item.active -->
+    <!-- ngIf: item.canConfirm -->
+    <!-- ngIf: showRepostButton(item) -->
+    <!-- ngIf: item.canEdit && currentSuperState == 'ON_HOLD' -->
+    <div class="cta-other">
+        <!-- ngIf: item.canEdit && currentSuperState != 'ON_HOLD' --><a data-ng-if="item.canEdit &amp;&amp; currentSuperState != 'ON_HOLD'" target="_self" href="http://www.kijiji.ca/p-edit-ad.html?adId=1046288220" class="edit-ad-begin ng-binding ng-scope" data-btn-loc="my-ads">
+            Edit
+        </a><!-- end ngIf: item.canEdit && currentSuperState != 'ON_HOLD' -->
+
+        <!-- ngIf: item.canDelete --><a data-ng-if="item.canDelete" class="cta-delete ng-binding ng-scope" id="delete-ad-1046288220" data-ad-id="1046288220" data-ng-click="deleteItem(item)" href="">
+            Delete
+        </a><!-- end ngIf: item.canDelete -->
+    </div>
+</td></tr><!-- end ngIf: !item.hiddenItem -->
+
+                        <!-- ngIf: showRepostMessage(item) -->
+
+                        <!-- ngIf: showDelayedMessage(item) -->
+                    </tbody><!-- end ngRepeat: item in items -->
+
+                    <tbody><tr style="display: none;" class="spinner-parent">
+                        <td colspan="8">
+                            <data-spinner class="ng-isolate-scope ads-container" data-key="ads-container" data-toggle-parent="true"><div class="loading-overlay">
+    <div class="wrapper">
+        <div class="spinner"></div>
+        <p class="ng-binding"></p>
+    </div>
+</div></data-spinner>
+                        </td>
+                    </tr>
+
+                    </tbody><tfoot style="width: 960px; height: 35px;"><tr style="width: 960px; height: 35px;"><th style="width: 33px; height: 24px;"></th><th colspan="8" style="width: 907px; height: 24px;"></th></tr></tfoot><tfoot style="width: 960px; bottom: 0px;" data-sticked="{type: 'bottom'}" data-sticked-trigger="itemsLoaded" class="container-footer ng-isolate-scope sticky" data-ng-show="items.length">
+                        <tr class="controls">
+                            <th style="width: 33px;"></th>
+                            <th style="width: 907px;" colspan="8">
+                                <!-- ngIf: currentSuperState != 'EXPIRED' --><button disabled="disabled" data-ng-if="currentSuperState != 'EXPIRED'" id="CtaDelete" data-ng-click="deleteSelectedItems()" class="cta-delete-all button-task ng-scope disabled" data-ng-class="{true:'disabled', false:''}[selectedItems.length <= 0]" data-ng-disabled="selectedItems.length <= 0">
+                                    Delete&nbsp;<!-- ngIf: selectedItems.length > 0 -->
+                                </button><!-- end ngIf: currentSuperState != 'EXPIRED' -->
+                                <!-- ngIf: currentSuperState == 'EXPIRED' || currentSuperState == 'ACTIVE' --><button disabled="disabled" data-ng-if="currentSuperState == 'EXPIRED' || currentSuperState == 'ACTIVE'" id="CtaRepost" data-ng-click="repostSelectedItems()" class="cta-repost-all button-task ng-scope disabled" data-ng-class="{true:'disabled', false:''}[selectedRepostItems.length <= 0]" data-ng-disabled="selectedRepostItems.length <= 0">
+                                    Repost&nbsp;<!-- ngIf: selectedRepostItems.length > 0 -->
+                                </button><!-- end ngIf: currentSuperState == 'EXPIRED' || currentSuperState == 'ACTIVE' -->
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
