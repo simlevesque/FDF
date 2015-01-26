@@ -10,8 +10,10 @@ app.get('/ajaxlisted', function(req, res){
 	casperWrapper.run(res, "getListing", config.username, config.password, formatListing);
 });
 
-app.listen('8081');
+app.get('/', function(req, res){
+	console.log("yo");
+});
 
-casperWrapper.run("", "getListing", config.username, config.password, formatListing);
+app.listen('3456');
 
 exports = module.exports = app;
