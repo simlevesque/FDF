@@ -14,7 +14,9 @@ var formatListing = function(res){
 exports = module.exports = formatListing
 
 var formatGetListing = function($, prices){
-	var i = 0, result = [];
+	var i = 0, result = [], prices = prices.split(',');
+  console.log(prices);
+ 
 	$(".item-enabled").filter(function(){
 		var ad = {};
 		
@@ -30,8 +32,8 @@ var formatGetListing = function($, prices){
 
 		if(tmpOnpage.charAt(0) === ">") ad["onpage"] = tmpOnpage
 		else ad["onpage"] = parseInt(tmpOnpage)
-
-		ad["price"] = parseInt(prices[i]);
+	console.log(prices[i]);
+		ad["price"] = prices[i];
 		
 		result.push(ad);
 		i++;
@@ -43,11 +45,11 @@ var formatGetListing = function($, prices){
 var formatDate = function(date) {
 	var result = {};
 	date = date.split("-");
-	result.day = parseInt(date[0]);
-	result.month = detectMonth(date[1]);
-	result.year = parseInt("20" + date[2]);
+	result.j = parseInt(date[0]);
+	result.m = detectMonth(date[1]);
+	result.a = parseInt("20" + date[2]);
 
-	return date;
+	return result;
 }
 
 var uppercaseFirstLetter = function(entry) {

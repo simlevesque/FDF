@@ -1,0 +1,77 @@
+body, html {
+margin:0;
+padding:0;
+}
+
+#header {
+    width: 100%;
+    background: #faf19a; /* Old browsers */
+	background: -moz-linear-gradient(left, #faf19a 0%, #ffffff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#faf19a), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #faf19a 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #faf19a 0%,#ffffff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #faf19a 0%,#ffffff 100%); /* IE10+ */
+	background: linear-gradient(to right, #faf19a 0%,#ffffff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#faf19a', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+    height: 130px;
+}
+
+#main {
+    width: 1200px;
+    margin: 0px auto;
+}
+
+
+#header span {
+	width: 118px;
+	height: 44px; 
+	display: block;
+	background-image: url(http://amkroma.com/fdf/logo.png);
+}
+
+#main h3 {
+    background-color:#B7DE66;
+	padding: 11px;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	margin-bottom: 5px;
+}
+
+#active tr {
+	line-height:30px;
+}
+
+#active tr:first-child th{
+    height: 30px;
+}
+#active th {
+	height:60px;
+	font-family:arial;
+}
+
+#active th span {
+    display: block;
+}
+
+#active th span.jour {
+    font-size: 23px;
+	line-height:23px;
+}
+
+#active th span.mois {
+    font-size: 14px;
+	line-height:14px;
+}
+
+#active th span.annee {
+    font-size: 13px;
+	line-height:13px;
+}
+
+col {
+width: auto;
+}

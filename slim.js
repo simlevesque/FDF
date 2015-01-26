@@ -1,18 +1,16 @@
 var express = require('express'),
 	app     = express(),
 	config  = require("./config"),
-	formatListing = require('./formatListing'),
 	casperWrapper = require('./casperWrapper'),
 	fs      = require('fs');
+	path      = require('path');
 	
-
+app.use(express.static(path.join(__dirname, 'public')));
+	
 app.get('/ajaxlisted', function(req, res){
-	casperWrapper.run(res, "getListing", config.username, config.password, formatListing);
+	casperWrapper.run(res, "getListing", config.username, config.password);
 });
 
-app.get('/', function(req, res){
-	console.log("yo");
-});
 
 app.listen('3456');
 

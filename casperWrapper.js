@@ -1,6 +1,7 @@
 var casperWrapper = {},
 	path = require('path'),
-	childProcess = require('child_process');
+	childProcess = require('child_process'),
+	formatListing = require('./formatListing');
 
 casperWrapper.arguments = function(script, un, pw) {
 	var scriptPath = path.join(__dirname, (script + ".js")),
@@ -10,7 +11,7 @@ casperWrapper.arguments = function(script, un, pw) {
 	return ["--engine=slimerjs", scriptPath, username, password];//Feed arguments
 }
 
-casperWrapper.run = function(res, script, un, pw, callback){
+casperWrapper.run = function(res, script, un, pw){
 	var data,
 		args = casperWrapper.arguments(script, un, pw);
 
@@ -22,7 +23,7 @@ casperWrapper.run = function(res, script, un, pw, callback){
 
 	child.on('close', function() {
 		if(!data){
-			callback(res);
+			formatListing(res);
 		} else {
 			console.log(data);
 		}

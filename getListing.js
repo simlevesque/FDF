@@ -56,7 +56,7 @@ casper.waitForSelector(baseSelector, function() {
 
 	var html = this.getHTML('.my-ads-active', true);
 	fs.write("./cache/listing/dom.html", html, "w");
-	fs.write("./cache/listing/prices.json", JSON.stringify(prices), "w");
+	fs.write("./cache/listing/prices.json", prices, "w");
 });
 
 //print the html
