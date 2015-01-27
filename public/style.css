@@ -1,4 +1,4 @@
-body, html {
+﻿body, html {
 margin:0;
 padding:0;
 }
@@ -24,9 +24,13 @@ padding:0;
 
 #header span {
 	width: 118px;
-	height: 44px; 
+	height: 44px;
 	display: block;
-	background-image: url(http://amkroma.com/fdf/logo.png);
+	background-image: url('http://amkroma.com/fdf/logo.png');
+	padding-top: 43px;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	margin-left: 120px;
 }
 
 #main h3 {
@@ -38,40 +42,70 @@ padding:0;
 	-moz-border-radius-topright: 8px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
-	margin-bottom: 5px;
+	margin-bottom:0;
 }
 
-#active tr {
-	line-height:30px;
+#active tbody tr {
+	line-height: 20px;
+	height: 58px;
 }
 
 #active tr:first-child th{
     height: 30px;
 }
-#active th {
-	height:60px;
-	font-family:arial;
+#active thead {
+	font-family: arial;
+font-size: 14px;
+background-color: #B7DE66;
+}
+
+#active tbody {
+	font-weight: 100;
+	font-family: helvetica;
+	font-size: 14px;
+	-webkit-box-shadow:inset 0px 0px 0px 1px #000;
+    -moz-box-shadow:inset 0px 0px 0px 1px #000;
+    box-shadow:inset 0px 0px 0px 1px #000;
+}
+table {
+    border-collapse: collapse;
+}
+ 
+#active tbody th{
+	border-bottom: 1px solid #000;
 }
 
 #active th span {
-    display: block;
+	display: block;
 }
 
 #active th span.jour {
+	float: left;
+	width: 30%;
     font-size: 23px;
 	line-height:23px;
+	margin-left:7%;
 }
 
 #active th span.mois {
     font-size: 14px;
-	line-height:14px;
+	line-height: 14px;
+	float: right;
+	width: 63%;
 }
 
 #active th span.annee {
     font-size: 13px;
-	line-height:13px;
+	line-height: 13px;
+	float: right;
+	width: 63%;
+}
+
+#active th span.cate {
+    line-height: 16px;
+	font-size: 13px;
 }
 
 col {
-width: auto;
+	width: auto;
 }
