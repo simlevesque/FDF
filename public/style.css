@@ -81,10 +81,10 @@ table {
 
 #active th span.jour {
 	float: left;
-	width: 30%;
-    font-size: 23px;
-	line-height:23px;
-	margin-left:7%;
+	width: 25%;
+	font-size: 19px;
+	line-height: 23px;
+	margin-left: 12%;
 }
 
 #active th span.mois {

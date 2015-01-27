@@ -8,7 +8,7 @@ var express = require('express'),
 app.use(express.static(path.join(__dirname, 'public')));
 	
 app.get('/ajaxlisted', function(req, res){
-	casperWrapper.run(res, "getListing", config.username, config.password);
+	casperWrapper.run(res, "getListing", config.username, config.password, {});
 });
 
 

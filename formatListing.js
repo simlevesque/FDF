@@ -15,10 +15,11 @@ exports = module.exports = formatListing
 
 var formatGetListing = function($, prices){
 	var i = 0, result = [], prices = prices.split(',');
-  console.log(prices);
  
 	$(".item-enabled").filter(function(){
 		var ad = {};
+		
+		ad["url"] = $(this).find(".title-text").attr("href");
 		
 		ad["name"] = $(this).find(".title-text").text().replace(/\s+/g,' ').trim();
 
@@ -32,7 +33,7 @@ var formatGetListing = function($, prices){
 
 		if(tmpOnpage.charAt(0) === ">") ad["onpage"] = tmpOnpage
 		else ad["onpage"] = parseInt(tmpOnpage)
-	console.log(prices[i]);
+		
 		ad["price"] = prices[i];
 		
 		result.push(ad);
